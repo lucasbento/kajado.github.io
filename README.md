@@ -1,2 +1,0 @@
-# kajado.github.io
-website
