@@ -1,16 +1,28 @@
 /* 
   Kajado - A Biblioteca dos Monges
-  Versão 1.6
+  Versão 1.7.2
   Documentação: http://kajado.github.io/doc
   Colabore no GitHub: https://github.com/Kajado
 */
 
-/* Kajado Reset */
+@keyframes oculta {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes exibe {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 
+  Kajado Reset 
+*/
 
 body {
   margin: 0; 
   font-size: 14px;
-  font-family: Verdana, Geneva, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 a { text-decoration: none; }
 code,samp { font-family: monospace, monospace; }
@@ -42,7 +54,9 @@ img[src*="maps.gstatic.com"],img[src*="googleapis.com"] { max-width: none; }
 img, picture, video, embed { max-width: 100%; }
 input:focus, textarea:focus { outline: none; }
 
-/* Kajado Estrutura */
+/* 
+  Kajado Estrutura 
+*/
 
 .area-min {
   width: 96%;
@@ -78,6 +92,7 @@ input:focus, textarea:focus { outline: none; }
 .exib, .apar { display: block !important; }
 
 /* ======== Grades */
+
 .grade {
   width: 100%;
   position: relative;
@@ -89,6 +104,7 @@ input:focus, textarea:focus { outline: none; }
 .grade:after { clear:both; }
 
 /*  COL  */
+
 .grade div[class*="col"] { display: inline; float:left; vertical-align:middle; }
 
 .col12 { width: 100%; }
@@ -290,8 +306,8 @@ input:focus, textarea:focus { outline: none; }
 .alt-tam100 { height: 100%; }
 .alt-tam100-esp { height: 98%; padding: 1%; }
 
-
 /*  FIX */
+
 .grade div[class*="fix"] { display: inline; float:left; vertical-align:middle; }
 
 /* fix10 ~ fix90 */
@@ -415,7 +431,6 @@ input:focus, textarea:focus { outline: none; }
 .fix1050 { width: 1050px; }
 .fix1050-esp { width: 1034px; padding: 8px; }
 
-
 /* ======== Altura */
 
 /* alt-fix10 ~ alt-fix90 */
@@ -536,10 +551,12 @@ input:focus, textarea:focus { outline: none; }
 .alt-fix1050 { height: 1050px; }
 .alt-fix1050-esp { height: 1034px; padding: 8px; }
 
-/* Kajado Formatação
+/*
+  Kajado Formatação
 */
 
 /* ======== Nao Exibir na Impressao */
+
 @media print {  .no-impr { display: none; } }
 
 /* ======== Padding */
@@ -660,8 +677,8 @@ input:focus, textarea:focus { outline: none; }
 .esp-dir-95 { padding-right: 95px; }
 .esp-dir-100 { padding-right: 100px; }
 
-
 /* ======== Margin */
+
 .mar-min { margin: 19px; }
 .mar { margin: 38px; }
 .mar-max { margin: 78px; }
@@ -783,7 +800,6 @@ input:focus, textarea:focus { outline: none; }
 .mar-dir-90 { margin-right: 90px; }
 .mar-dir-95 { margin-right: 95px; }
 .mar-dir-100 { margin-right: 100px; }
-
 
 /* ======== Bordas */
 
@@ -1033,7 +1049,6 @@ input:focus, textarea:focus { outline: none; }
 /* Sem Borda */
 .bord-none { border: 0 !important; }
 
-
 /* ======== Fontes */
 
 /* Family */
@@ -1119,6 +1134,14 @@ input:focus, textarea:focus { outline: none; }
 .f-none-hover:hover { text-decoration: none; }
 .f-sub { text-decoration: underline !important; }
 .f-sub-hover:hover { text-decoration: underline; }
+
+/* Efeito de Sombra nos Textos */
+.f-sombra-min { text-shadow: 0px 1px 12px #ddd; }
+.f-sombra { text-shadow: 0px 1px 17px #ddd; }
+.f-sombra-max { text-shadow: 0px 1px 21px #ddd; }
+.f-sombra-min-esc { text-shadow: 0px 1px 12px #444; }
+.f-sombra-esc { text-shadow: 0px 1px 17px #444; }
+.f-sombra-max-esc { text-shadow: 0px 1px 21px #444; }
 
 
 /* ======== Opacidade */
@@ -1317,7 +1340,6 @@ input:focus, textarea:focus { outline: none; }
   box-shadow: inset 0 0 27px #888;
 }
 
-
 /* ======== Position */
 .p-fix { position: fixed; }
 .p-abs { position: absolute; }
@@ -1332,16 +1354,20 @@ input:focus, textarea:focus { outline: none; }
 .p-bot { bottom: 0; }
 
 /* ======== z-index */
-.zindex-min { z-index: 2; }
-.zindex { z-index: 99; }
-.zindex-max { z-index: 999; }
-
+.z-index-min { z-index: 2; }
+.z-index { z-index: 99; }
+.z-index-max { z-index: 999; }
 
 /* ======== Cursor */
 .pointer { cursor: pointer !important; }
 
-/* Kajado Cores
+/* 
+  Kajado Cores
 */
+
+/* -- Transparente -- */
+.transp { background: transparent; }
+.transp-hover:hover { background: transparent; }
 
 /* -- Branco -- */
 .bran { background: #FFFFFF; color: #333; }
@@ -1718,6 +1744,22 @@ input:focus, textarea:focus { outline: none; }
 
 /* Kajado Elementos */
 
+.texto-min {
+  font-size: 15px;
+  line-height: 21px;
+  text-align: justify;
+}
+.texto {
+  font-size: 18px;
+  line-height: 26px;
+  text-align: justify;
+}
+.texto-max {
+  font-size: 23px;
+  line-height: 34px;
+  text-align: justify;
+}
+
 /* ======== Elemento Seguindo o Scroll*/
 .flutua { position: absolute; }
 .flutuap {
@@ -1739,13 +1781,13 @@ input:focus, textarea:focus { outline: none; }
   opacity: 0.88;
   -moz-opacity: 0.88;
   filter: alpha(opacity=88);
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
-  transition: all 0.3s linear;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
 }
 .bto-hover:hover {
-    text-shadow: 0px 1px 21px #f1f1f1;
+  text-shadow: 0px 1px 21px #f1f1f1;
   opacity: 1;
   -moz-opacity: 1;
   filter: alpha(opacity=1);
@@ -1769,29 +1811,7 @@ input:focus, textarea:focus { outline: none; }
   background:rgba(0,0,0,0.7);
 }
 
-/* NORMAL */
 .modal {
-  width: 80%;
-  overflow:auto;
-  padding:4% 0;
-  margin: 9% 10%;
-  position: fixed;
-  z-index: 999;
-  display: none;
-}
-.modal .fechar { 
-    float: right;
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 39px;
-    font-weight: 300;
-    color: #ddd;
-}
-
-/* FLAT */
-.modal-flat {
   width: 100%;
   max-height:80%;
   overflow:auto;
@@ -1799,28 +1819,19 @@ input:focus, textarea:focus { outline: none; }
   margin: 9% 0;
   position: fixed;
   z-index: 999;
-  background:#FFF;
+  background:#fff;
   display: none;
 }
-.modal-flat .fechar { 
-    float: right;
-    cursor: pointer;
-    font-size: 39px;
-    font-weight: 300;
+.modal .fechar { 
+  float: right;
+  cursor: pointer;
+  font-size: 39px;
+  font-weight: 300;
 }
-
 
 /* ======== Alertas */
+
 .alerta {
-  width: 96%;
-  margin: 5px 0 5px 1px;
-  padding: 1%;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-}
-.alerta-top {
   width: 98%;
   padding: 1.5% 1%;
   text-align: center;
@@ -1828,38 +1839,55 @@ input:focus, textarea:focus { outline: none; }
   top: 0;
   left: 0;
   right: 0;
+  z-index: 999;
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
+  animation-name: exibe;
+  animation-duration: 0.9s;
+  animation-fill-mode: both;
 }
 .alerta-esq {
-  width: 185px;
-  padding: 13px;
+  min-width: 121px;
+  padding: 17px 19px;
   position: fixed;
   bottom: 21px;
   left: 19px;
-  display: none;
-  font-size: 68%;
+  z-index: 999;
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
+  animation-name: exibe;
+  animation-duration: 0.9s;
+  animation-fill-mode: both;
 }
 .alerta-dir {
-  width: 185px;
-  padding: 13px;
+  min-width: 121px;
+  padding: 17px 19px;
   position: fixed;
   bottom: 21px;
   right: 19px;
-  display: none;
-  font-size: 68%;
+  z-index: 999;
   -webkit-transition: all 0.3s ease-in;
   -moz-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
+  animation-name: exibe;
+  animation-duration: 0.9s;
+  animation-fill-mode: both;
 }
 
+.alerta .fechar,
+.alerta-esq .fechar,
+.alerta-dir .fechar {
+  float: right;
+  font-size: 15px;
+  font-weight: 300;
+  cursor: pointer;
+  margin-left: 21px;
+}
 
 /* ======== Formularios */
 
@@ -1903,24 +1931,19 @@ input:focus, textarea:focus { outline: none; }
   box-shadow: 0px 0px 5px #8ac4eb;
 }
 
-
 /* ======== Textos */
 
 /* H1 */
-.h1, .h1-bord { margin: 14px 3px 7px 3px; font-weight: 300; }
-.h1-bord { border-bottom: 1px solid #999; padding-bottom:7px; }
+.h1, .h1-bord { font-weight: 300; }
+.h1-bord { border-bottom: 1px solid #999; padding-bottom: 7px; }
 
 /* H2 */
-.h2, .h2-bord { margin: 9px 3px 5px 3px; font-weight: 300; }
-.h2-bord { border-bottom: 1px solid #999; padding-bottom:7px; }
+.h2, .h2-bord { font-weight: 300; }
+.h2-bord { border-bottom: 1px solid #999; padding-bottom: 7px; }
 
 /* H3 */
-.h3, .h3-bord { margin: 4px 3px 3px 3px; font-weight: 300; }
-.h3-bord { border-bottom: 1px solid #999; padding-bottom:7px; }
-
-/* Subtitulo */
-.sub-h { margin: 5px 9px 12px 9px; }
-
+.h3, .h3-bord { font-weight: 300; }
+.h3-bord { border-bottom: 1px solid #999; padding-bottom: 7px; }
 
 /* ======== Tabelas */
 
@@ -2012,6 +2035,17 @@ input:focus, textarea:focus { outline: none; }
 
 /* ======== Filtros de imagens */
 
+/* Efeito Cor */
+.img-efei-cor {
+  -webkit-filter: grayscale(90%);
+  filter: grayscale(90%);
+}
+.img-efei-cor:hover {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+/* Preto e Branco */
 .img-pb-min {
   -webkit-filter: grayscale(20%); 
   filter: grayscale(20%); 
@@ -2024,6 +2058,8 @@ input:focus, textarea:focus { outline: none; }
   -webkit-filter: grayscale(100%); 
   filter: grayscale(100%); 
 }
+
+/* Sépia */
 .img-sepia-min {
   -webkit-filter: sepia(20%); 
   filter: sepia(20%); 
@@ -2036,6 +2072,8 @@ input:focus, textarea:focus { outline: none; }
   -webkit-filter: sepia(100%); 
   filter: sepia(100%); 
 }
+
+/* Desfoque */
 .img-desf-min {
   -webkit-filter: blur(1px); 
   filter: blur(1px); 
@@ -2048,6 +2086,18 @@ input:focus, textarea:focus { outline: none; }
   -webkit-filter: blur(8px); 
   filter: blur(8px); 
 }
+
+/* Efeito Desfoque */
+.img-efei-desf {
+  -webkit-filter: blur(2px); 
+  filter: blur(2px); 
+}
+.img-efei-desf:hover {
+  -webkit-filter: blur(0); 
+  filter: blur(0); 
+}
+
+/* Saturação */
 .img-sat-min {
   -webkit-filter: saturate(20%); 
   filter: saturate(20%); 
@@ -2060,6 +2110,8 @@ input:focus, textarea:focus { outline: none; }
   -webkit-filter: saturate(100%); 
   filter: saturate(100%); 
 }
+
+/* Negativo */
 .img-neg-min {
   -webkit-filter: invert(20%); 
   filter: invert(20%); 
@@ -2073,7 +2125,9 @@ input:focus, textarea:focus { outline: none; }
   filter: invert(100%); 
 }
 
-/* hover */
+/* ---- HOVER */
+
+/* Preto e Branco */
 .img-pb-min-hover:hover {
   -webkit-filter: grayscale(20%); 
   filter: grayscale(20%); 
@@ -2086,6 +2140,8 @@ input:focus, textarea:focus { outline: none; }
   -webkit-filter: grayscale(100%); 
   filter: grayscale(100%); 
 }
+
+/* Sépia */
 .img-sepia-min-hover:hover {
   -webkit-filter: sepia(20%); 
   filter: sepia(20%); 
@@ -2098,6 +2154,8 @@ input:focus, textarea:focus { outline: none; }
   -webkit-filter: sepia(100%); 
   filter: sepia(100%); 
 }
+
+/* Desfoque */
 .img-desf-min-hover:hover {
   -webkit-filter: blur(1px); 
   filter: blur(1px); 
@@ -2110,6 +2168,8 @@ input:focus, textarea:focus { outline: none; }
   -webkit-filter: blur(8px); 
   filter: blur(8px); 
 }
+
+/* Saturação */
 .img-sat-min-hover:hover {
   -webkit-filter: saturate(20%); 
   filter: saturate(20%); 
@@ -2122,6 +2182,8 @@ input:focus, textarea:focus { outline: none; }
   -webkit-filter: saturate(100%); 
   filter: saturate(100%); 
 }
+
+/* Negativo */
 .img-neg-min-hover:hover {
   -webkit-filter: invert(20%); 
   filter: invert(20%); 
